@@ -15,9 +15,9 @@ var simpleDeepFreeze = require('simple-deep-freeze');
 
 var obj = { a: { b: 1}, c: [2, 3] };
 simpleDeepFreeze(obj);
-obj.a.b = 2;
+obj.a.b = 2; // error (when in 'use strict' mode)
 console.log(obj.a.b); // 1
-obj.c[0] = 100;
+obj.c[0] = 100; // error (when in 'use strict' mode)
 console.log(obj.c[0]); // 2
 
 simpleDeepFreeze(Buffer); // error
