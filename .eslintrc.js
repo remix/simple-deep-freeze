@@ -1,0 +1,7 @@
+module.exports = {
+  extends: ['prettier'],
+  plugins: ['prettier'],
+  rules: {
+    'prettier/prettier': ['error', { singleQuote: true, trailingComma: 'es5', printWidth: 100 }],
+  },
+};

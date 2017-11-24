@@ -1,0 +1,1 @@
+module.exports = function simpleDeepFreeze<T: any>(object: T): T { return object; };

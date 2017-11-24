@@ -1,0 +1,33 @@
+{
+  "name": "simple-deep-freeze",
+  "version": "0.0.1",
+  "author": "Jan Paul Posma <j@npaulpos.ma>",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remix/simple-deep-freeze.git"
+  },
+  "keywords": [
+    "freeze",
+    "immutable",
+    "redux",
+    "deep",
+    "recursive"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/remix/simple-deep-freeze/issues"
+  },
+  "homepage": "https://github.com/remix/simple-deep-freeze#readme",
+  "scripts": {
+    "test": "eslint . && jasmine index_spec.js",
+    "prepublishOnly": "npm run test"
+  },
+  "devDependencies": {
+    "eslint": "*",
+    "eslint-config-prettier": "*",
+    "eslint-plugin-prettier": "*",
+    "jasmine": "*",
+    "prettier": "*"
+  }
+}
