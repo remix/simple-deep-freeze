@@ -37,7 +37,7 @@ describe('simpleDeepFreeze', function() {
 
   it('errors for objects that are not plain old Javascript objects', function() {
     expect(function() {
-      simpleDeepFreeze(new window.Map());
+      simpleDeepFreeze(Buffer);
     }).toThrow();
   });
 });
