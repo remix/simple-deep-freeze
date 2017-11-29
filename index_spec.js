@@ -24,6 +24,18 @@ describe('simpleDeepFreeze', function() {
     });
   });
 
+  it('does not let you mutate objects deep down', function() {
+    var object = {
+      someObject: { foo: 'bar' },
+    };
+
+    expect(simpleDeepFreeze(object)).toEqual(object);
+
+    expect(function() {
+      object.someObject.foo = 'baz';
+    }).toThrow();
+  });
+
   it('does not recurse down when an object is already frozen', function() {
     var object = {
       someObject: { nested: 'inObject' },
@@ -38,6 +50,10 @@ describe('simpleDeepFreeze', function() {
   it('errors for objects that are not plain old Javascript objects', function() {
     expect(function() {
       simpleDeepFreeze(Buffer);
+    }).toThrow();
+
+    expect(function() {
+      simpleDeepFreeze({ someBuffer: Buffer });
     }).toThrow();
   });
 });
